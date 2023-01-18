@@ -16,3 +16,23 @@
 
 Pronto, agora só esperar.
 
+<h1>Dependencias TERMUX</h1>
+
+$ apt upgrade && apt update
+
+$ pkg install git
+
+$ pkg install requests
+
+$ pkg install python
+<h5>Comandos TERMUX</h5>
+
+$ git clone https://github.com/RaiiDev/RYTBOT.git
+
+$ cd RYTBOT
+
+$ python rYTbot.py
+
+$ proxy.txt (ou o seu arquivo)
+
+$ Link do video do youtube
