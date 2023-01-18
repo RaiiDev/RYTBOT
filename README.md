@@ -1,4 +1,4 @@
-# RYTBOT 1.0
+# RYTBOT 1.0 💢
 <h3>Um bot de views do youtube utilizando python. By me (Rai)</h3>
 <h5>Este bot é para fins educacionais!</h5>
 
