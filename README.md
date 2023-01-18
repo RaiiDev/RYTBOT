@@ -22,9 +22,9 @@ $ apt upgrade && apt update
 
 $ pkg install git
 
-$ pkg install requests
-
 $ pkg install python
+
+$ pip install requests
 <h3>Comandos TERMUX</h3>
 
 $ git clone https://github.com/RaiiDev/RYTBOT.git
