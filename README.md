@@ -2,7 +2,9 @@
 <h3>Um bot de views do youtube utilizando python. By me (Rai)</h3>
 <h5>Este bot é para fins educacionais!</h5>
 
-1- O bot tem um arquivo chamado proxy.txt, e lá tem uma lista de proxys para fazer o bot funcionar, Adicione mais se precisar!!!
+!- O bot tem um arquivo chamado proxy.txt, e lá tem uma lista de roxys para fazer o bot funcionar, Adicione mais se precisar!
+
+1-Clone o repositorio utilizando o comando "git clone https://github.com/RaiiDev/RYTBOT.git"
 
 2- Faça o download das dependencias no seu terminal utilizando o comando "pip install requirements.txt"
 
