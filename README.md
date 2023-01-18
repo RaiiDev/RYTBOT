@@ -18,7 +18,9 @@ Pronto, agora só esperar.
 
 <h1>Dependencias TERMUX</h1>
 
-$ apt upgrade && apt update
+$ apt upgrade
+
+$ apt update
 
 $ pkg install git
 
