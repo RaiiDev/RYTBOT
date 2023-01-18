@@ -25,7 +25,7 @@ $ pkg install git
 $ pkg install requests
 
 $ pkg install python
-<h5>Comandos TERMUX</h5>
+<h3>Comandos TERMUX</h3>
 
 $ git clone https://github.com/RaiiDev/RYTBOT.git
 
