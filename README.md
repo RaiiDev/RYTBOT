@@ -1,4 +1,4 @@
-# RYTBOT 1.1 💢
+# RYTBOT 2.1 💢
 <h3>Um bot de views do youtube utilizando python. By me (Rai)</h3>
 <h3>Mantenha o seu bot sempre atualizado para continuar funcionando!!</h3>
 <h5>Este bot é para fins educacionais!</h5>
@@ -41,3 +41,11 @@ $ python rYTbot.py
 $ proxy.txt (ou o seu arquivo)
 
 $ Link do video do youtube
+
+<h1>Obter PROXY</h1>
+Para obter uma proxy, vamos utilizar 2 site
+1- https://proxypremium.top/http-proxy-list para pegar as proxys
+
+2- https://proxydb.net/extractor para extrair as porxys do site com mais facilidade
+
+Copie todas as proxys do 1 site (pode copiar tudo) e cole no 2 site para extrair as proxys, depois é só colocar as proxys no arquivo proxy.txt.
