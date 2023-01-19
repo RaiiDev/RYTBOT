@@ -43,6 +43,7 @@ Ver: 2.1 beta
 ===============BOT BY RAI==================
 Mantenha o BOT atualizado para continuar funcionando.
 Para atualizar basta clonar o repositorio do github novamente.
+Veja o tutorial de como encontrar mais proxys no github!
     ''')
 
 youtube_url = input("Insira a URL do video: ")
