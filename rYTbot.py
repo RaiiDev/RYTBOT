@@ -1,5 +1,4 @@
 import requests
-import re
 import time
 
 print('''
@@ -40,69 +39,39 @@ ___________$$$$$$$$$$$$$$$$$$$_$$
 ____________$$$___$$$$$___$$$__$$
 _______________$$$_____$$$____$$
 
-Ver: 1.1 beta
+Ver: 2.1 beta
 ===============BOT BY RAI==================
 Mantenha o BOT atualizado para continuar funcionando.
 Para atualizar basta clonar o repositorio do github novamente.
     ''')
 
-# Recebe o nome do arquivo de proxies
-file_name = input("Insira o nome do arquivo de proxies: ")
+youtube_url = input("Insira a URL do video: ")
 
-# Recebe o link do video
-url = input("Insira o link do video: ")
+try:
+    with open(input("Nome do arquivo contendo as proxys: "), "r") as proxy_file:
+        proxies = proxy_file.read().splitlines()
+except FileNotFoundError:
+    print("Arquivo não encontrado.")
+    proxies = []
 
-# Verifica se o link é válido e pertence ao YouTube
-youtube_regex = re.compile(r'^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$')
-if not youtube_regex.match(url):
-    print("O link não é válido ou não pertence ao YouTube.")
-    exit()
-else:
+valid_proxy = None
+for proxy in proxies:
     try:
-        response = requests.get(url)
-        if "youtube" in response.text.lower():
-            print("Link válido para vídeo do YouTube.")
+        # Usa a proxy para entrar no video.
+        response = requests.get(youtube_url, proxies={"http": "http://"+proxy, "https": "http://"+proxy}, timeout=35)
+        # Se a proxy retornar o valor 200, a proxy será bem sucedida
+        if response.status_code == 200:
+            valid_proxy = proxy
+            print("Proxy " + proxy + " bem sucedida.")
+            time.sleep(30)
         else:
-            print("O link não é válido ou não pertence ao YouTube.")
-            exit()
-    except requests.exceptions.RequestException as e:
-        print("Erro ao verificar link: " + e)
-        exit()
+            # Verifica se a proxy foi bloqueada
+            if "The proxy server is refusing connections" in response.text or "The proxy server received an invalid response from an upstream server" in response.text:
+                print("Proxy " + proxy + " bloqueada pelo youtube")
+            else:
+                print("Proxy " + proxy + " invalida.")
+    except:
+        print("Proxy " + proxy + " invalida.")
 
-# Abrir arquivo com proxy
-with open(file_name) as f:
-    proxies = f.read().splitlines()
-
-# Adiciona o protocolo http ou https se ele não estiver presente na proxy
-for i, proxy in enumerate(proxies):
-    if not re.match(r'^https?:\/\/', proxy):
-        proxies[i] = 'http://' + proxy
-
-proxy_counter = 0
-while proxy_counter < len(proxies):
-    protocol = "http"
-    while True:
-        try:
-            start_time = time.time()
-            response = requests.get(url, proxies={protocol: proxies[proxy_counter]}, timeout=30)
-            response.raise_for_status()
-            while True:
-                end_time = time.time()
-                total_time = end_time - start_time
-                if total_time >= 30:
-                    break
-                time.sleep(1)
-            print("Proxy bem-sucedida: " + proxies[proxy_counter] + " Protocolo: " + protocol + " Tempo de visualização: {} segundos".format(total_time))
-            proxy_counter += 1
-            break
-        except requests.exceptions.RequestException as e:
-            if protocol == "http":
-                protocol = "https"
-                continue
-            elif protocol == "https":
-                print("Erro ao utilizar proxy: " + proxies[proxy_counter])
-                proxy_counter += 1
-                break
-else:
-    print("Todas as proxys foram lidas.")
-    exit()
+if valid_proxy == None:
+    print("Nenhuma proxy valida encontrada.")
