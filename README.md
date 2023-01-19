@@ -1,5 +1,6 @@
-# RYTBOT 1.0 💢
+# RYTBOT 1.1 💢
 <h3>Um bot de views do youtube utilizando python. By me (Rai)</h3>
+<h3>Mantenha o seu bot sempre atualizado para continuar funcionando!!</h3>
 <h5>Este bot é para fins educacionais!</h5>
 
 ![Screenshot_20230118-213745_Termux](https://user-images.githubusercontent.com/123031683/213328796-a963d194-d97b-4645-bdb4-ae1e0636b772.jpg)
