@@ -58,7 +58,7 @@ valid_proxy = None
 for proxy in proxies:
     try:
         # Usa a proxy para entrar no video.
-        response = requests.get(youtube_url, proxies={"http": "http://"+proxy, "https": "http://"+proxy}, timeout=35)
+        response = requests.get(youtube_url, proxies={"http": "http://"+proxy, "https": "http://"+proxy}, timeout=30)
         # Se a proxy retornar o valor 200, a proxy será bem sucedida
         if response.status_code == 200:
             valid_proxy = proxy
