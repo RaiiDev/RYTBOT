@@ -39,8 +39,13 @@ ___________$$$$$$$$$$$$$$$$$$$__$$
 ___________$$$$$$$$$$$$$$$$$$$_$$
 ____________$$$___$$$$$___$$$__$$
 _______________$$$_____$$$____$$
-BOT YOUTUBE BY RAI
+
+Ver: 1.1 beta
+===============BOT BY RAI==================
+Mantenha o BOT atualizado para continuar funcionando.
+Para atualizar basta clonar o repositorio do github novamente.
     ''')
+
 # Recebe o nome do arquivo de proxies
 file_name = input("Insira o nome do arquivo de proxies: ")
 
@@ -81,14 +86,15 @@ while proxy_counter < len(proxies):
             start_time = time.time()
             response = requests.get(url, proxies={protocol: proxies[proxy_counter]}, timeout=30)
             response.raise_for_status()
-            end_time = time.time()
-            total_time = end_time - start_time
-            if total_time < 30:
-                time.sleep(30 - total_time)
+            while True:
+                end_time = time.time()
+                total_time = end_time - start_time
+                if total_time >= 30:
+                    break
+                time.sleep(1)
             print("Proxy bem-sucedida: " + proxies[proxy_counter] + " Protocolo: " + protocol + " Tempo de visualização: {} segundos".format(total_time))
             proxy_counter += 1
             break
-
         except requests.exceptions.RequestException as e:
             if protocol == "http":
                 protocol = "https"
