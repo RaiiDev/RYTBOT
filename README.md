@@ -44,7 +44,7 @@ $ Link do video do youtube
 
 <h1>Obter PROXY</h1>
 Para obter uma proxy, vamos utilizar 2 site
-1- https://proxypremium.top/http-proxy-list para pegar as proxys
+1- https://hidemy.name/en/proxy-list/ para pegar as proxys
 
 2- https://proxydb.net/extractor para extrair as porxys do site com mais facilidade
 
