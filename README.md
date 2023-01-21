@@ -1,4 +1,4 @@
-# RYTBOT 2.5 beta 💢
+# RYTBOT 2.6 beta 💢
 <h3>Um bot de views do youtube utilizando python. By me (Rai)</h3>
 <h3>Mantenha o seu bot sempre atualizado para continuar funcionando!!</h3>
 <h3>Copie o link do YouTube pelo navegador!!</h3>
