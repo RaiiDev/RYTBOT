@@ -60,7 +60,7 @@ for proxy in proxies:
     print("Verificando a proxy: " + proxy)
     try:
         # Usa a proxy para entrar no video.
-        response = requests.head(youtube_url, proxies={"http": "http://"+proxy, "https": "http://"+proxy}, timeout=5)
+        response = requests.head(youtube_url, proxies={"http": "http://"+proxy, "https": "http://"+proxy}, timeout=10)
         # Se a proxy retornar o valor 200, a proxy será bem sucedida
         if response.status_code == 200:
             valid_proxies.append(proxy)
