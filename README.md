@@ -40,9 +40,9 @@ $ cd RYTBOT
 
 $ python3 rYTbot.py
 
-$ proxy.txt (ou o seu arquivo)
-
 $ Link do video do youtube
+
+$ proxy.txt (ou o seu arquivo)
 
 <h1>Obter PROXY</h1>
 Para obter uma proxy, vamos utilizar 2 site, 1 para pegar as proxys e o outro para extrair as proxys
