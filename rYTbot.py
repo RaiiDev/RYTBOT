@@ -52,9 +52,9 @@ def update_script():
     script_path = os.path.abspath(os.path.dirname(__file__))
     script_folder = os.path.basename(script_path)
     os.system(f"rm -rf {script_path}")
-    os.system(f"git clone https://github.com/RaiiDev/RYTBOT.git {script_path}") # clona o novo repositório no caminho atual do script
+    os.system(f"git clone https://github.com/RaiiDev/RYTBOT.git {script_folder}") # clona o novo repositório no caminho atual do script
     print("Script atualizado com sucesso. Reiniciando...")
-    os.system(f"python {script_path}/rYTbot.py") 
+    os.system(f"python {script_folder}/rYTbot.py") 
     
 print("1. Atualizar script")
 print('''2. Continuar sem atualizar
