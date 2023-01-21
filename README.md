@@ -1,4 +1,4 @@
-# RYTBOT 2.1 💢
+# RYTBOT 2.5 beta 💢
 <h3>Um bot de views do youtube utilizando python. By me (Rai)</h3>
 <h3>Mantenha o seu bot sempre atualizado para continuar funcionando!!</h3>
 <h5>Este bot é para fins educacionais!</h5>
@@ -11,7 +11,7 @@
 
 2- Faça o download das dependencias no seu terminal utilizando o comando "pip install requirements.txt"
 
-3- Execute o comando "python rYTbot.py"
+3- Execute o comando "python3 rYTbot.py"
 
 4- Digite o nome do arquivo contendo as proxys (proxy.txt) já tem um arquivo contendo algumas proxys 
 
@@ -29,6 +29,8 @@ $ pkg install git
 
 $ pkg install python
 
+$ pkg install python3
+
 $ pip install requests
 <h3>Comandos TERMUX</h3>
 
@@ -36,16 +38,23 @@ $ git clone https://github.com/RaiiDev/RYTBOT.git
 
 $ cd RYTBOT
 
-$ python rYTbot.py
+$ python3 rYTbot.py
 
 $ proxy.txt (ou o seu arquivo)
 
 $ Link do video do youtube
 
 <h1>Obter PROXY</h1>
-Para obter uma proxy, vamos utilizar 2 site
-1- https://hidemy.name/en/proxy-list/ para pegar as proxys
+Para obter uma proxy, vamos utilizar 2 site, 1 para pegar as proxys e o outro para extrair as proxys
 
-2- https://proxydb.net/extractor para extrair as porxys do site com mais facilidade
+Você pode perquisar um site que fornece proxys gratis, vou indicar 3:
+1- https://spys.one/en
+2- https://www.freeproxylists.net
+3- https://hidemy.name/en/proxy-list
 
-Copie todas as proxys do 1 site (pode copiar tudo) e cole no 2 site para extrair as proxys, depois é só colocar as proxys no arquivo proxy.txt.
+Depois utilize um site para extrair as proxys do site:
+https://proxydb.net/extractor (para extrair as porxys do site, basta copiar tudo e colocar no proxydb extractor)
+
+Depois você pode trocar as proxys do arquivo proxy.txt
+
+Para abrir o arquivo proxy.txt pelo terminal do termux, você pode usar o comando nano proxy.txt e modificar as proxys.
