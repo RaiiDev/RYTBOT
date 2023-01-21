@@ -1,5 +1,6 @@
 import requests
 import time
+import sys
 import os
 
 print('''
@@ -39,12 +40,33 @@ ___________$$$$$$$$$$$$$$$$$$$__$$
 ___________$$$$$$$$$$$$$$$$$$$_$$
 ____________$$$___$$$$$___$$$__$$
 _______________$$$_____$$$____$$
-
+==RYTBOT==
 Ver: 2.5 beta
+    ''')
+print('''
 ===============BOT BY RAI==================
 Mantenha o BOT atualizado para continuar funcionando.
-Para atualizar basta clonar o repositorio do github novamente.
+''')
+
+def update_script():
+    os.system("git clone https://github.com/RaiiDev/RYTBOT.git")
+    print("Script atualizado com sucesso. Reiniciando...")
+    os.execl(sys.executable, sys.executable, *sys.argv)
+
+print("1. Atualizar script")
+print('''2. Continuar sem atualizar
     ''')
+
+choice = input("Escolha uma opção: ")
+
+
+if choice == "1":
+    update_script()
+elif choice == "2":
+    pass
+else:
+    print("Opção inválida. Encerrando script.")
+    sys.exit()
 
 youtube_url = input("Insira a URL do video: ")
 
