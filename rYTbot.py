@@ -39,7 +39,7 @@ ___________$$$$$$$$$$$$$$$$$$$_$$
 ____________$$$___$$$$$___$$$__$$
 _______________$$$_____$$$____$$
 
-Ver: 2.1 beta
+Ver: 2.5 beta
 ===============BOT BY RAI==================
 Mantenha o BOT atualizado para continuar funcionando.
 Para atualizar basta clonar o repositorio do github novamente.
