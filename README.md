@@ -48,9 +48,9 @@ $ proxy.txt (ou o seu arquivo)
 Para obter uma proxy, vamos utilizar 2 site, 1 para pegar as proxys e o outro para extrair as proxys
 
 Você pode perquisar um site que fornece proxys gratis, vou indicar 3:
-1- https://spys.one/en
-2- https://www.freeproxylists.net
-3- https://hidemy.name/en/proxy-list
+https://spys.one/en
+https://www.freeproxylists.net
+https://hidemy.name/en/proxy-list
 
 Depois utilize um site para extrair as proxys do site:
 https://proxydb.net/extractor (para extrair as porxys do site, basta copiar tudo e colocar no proxydb extractor)
