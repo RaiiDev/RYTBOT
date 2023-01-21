@@ -46,7 +46,7 @@ Ver: 2.5 beta
 print('''
 ===============BOT BY RAI==================
 Mantenha o BOT atualizado para continuar funcionando.
-Atenção! Copie o link do YouTube pelo navegador. 
+Atenção! Copie o link do YouTube pelo navegador. (Veja o tutorial no github)
 ''')
 
 youtube_url = input("Insira a URL do video: ")
