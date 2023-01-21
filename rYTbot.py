@@ -43,7 +43,6 @@ Ver: 2.1 beta
 ===============BOT BY RAI==================
 Mantenha o BOT atualizado para continuar funcionando.
 Para atualizar basta clonar o repositorio do github novamente.
-Veja o tutorial de como encontrar mais proxys no github!
     ''')
 
 youtube_url = input("Insira a URL do video: ")
@@ -55,24 +54,42 @@ except FileNotFoundError:
     print("Arquivo não encontrado.")
     proxies = []
 
-valid_proxy = None
+print("Verificando as proxies...")
+valid_proxies = []
 for proxy in proxies:
+    print("Verificando a proxy: " + proxy)
     try:
         # Usa a proxy para entrar no video.
-        response = requests.get(youtube_url, proxies={"http": "http://"+proxy, "https": "http://"+proxy}, timeout=30)
+        response = requests.head(youtube_url, proxies={"http": "http://"+proxy, "https": "http://"+proxy}, timeout=5)
         # Se a proxy retornar o valor 200, a proxy será bem sucedida
         if response.status_code == 200:
-            valid_proxy = proxy
-            print("Proxy " + proxy + " bem sucedida.")
-            time.sleep(30)
-        else:
-            # Verifica se a proxy foi bloqueada
-            if "The proxy server is refusing connections" in response.text or "The proxy server received an invalid response from an upstream server" in response.text:
-                print("Proxy " + proxy + " bloqueada pelo youtube")
-            else:
-                print("Proxy " + proxy + " invalida.")
+            valid_proxies.append(proxy)
     except:
-        print("Proxy " + proxy + " invalida.")
+        pass
 
-if valid_proxy == None:
+if len(valid_proxies) == 0:
     print("Nenhuma proxy valida encontrada.")
+else:
+    print(f"{len(valid_proxies)} proxy(s) validas(s) encontradas. Utilizando as proxys para visualizar o video...")
+    salvar = input("Deseja salvar as proxys funcionais em um arquivo txt? (s/n)")
+    if salvar == "s":
+        with open("proxies_validas.txt", "w") as valid_proxy_file:
+            for valid_proxy in valid_proxies:
+                valid_proxy_file.write(valid_proxy + "\n")
+                print(f"Usando a proxy: {valid_proxy}")
+                try:
+                    # Use the proxy to access the video
+                    response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, timeout=30)
+                    if response.status_code == 200:
+                        time.sleep(30)
+                except requests.exceptions.RequestException:
+                    print("Proxy " + valid_proxy + " inválida.")
+    if salvar == "n":
+        print(f"Usando a proxy: {valid_proxy}")
+        try:
+            # Use the proxy to access the video
+            response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, timeout=30)
+            if response.status_code == 200:
+                time.sleep(30)
+        except requests.exceptions.RequestException:
+            print("Proxy " + valid_proxy + " inválida.")
