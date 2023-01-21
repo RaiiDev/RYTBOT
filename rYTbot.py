@@ -85,11 +85,12 @@ else:
                 except requests.exceptions.RequestException:
                     print("Proxy " + valid_proxy + " inválida.")
     if salvar == "n":
-        print(f"Usando a proxy: {valid_proxy}")
-        try:
-            # Use the proxy to access the video
-            response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, timeout=30)
-            if response.status_code == 200:
-                time.sleep(30)
-        except requests.exceptions.RequestException:
-            print("Proxy " + valid_proxy + " inválida.")
+        for valid_proxy in valid_proxies:
+            print(f"Usando a proxy: {valid_proxy}")
+            try:
+                # Use the proxy to access the video
+                response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, timeout=30)
+                if response.status_code == 200:
+                    time.sleep(30)
+            except requests.exceptions.RequestException:
+                print("Proxy " + valid_proxy + " inválida.")
