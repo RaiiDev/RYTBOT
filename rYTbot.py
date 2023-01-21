@@ -49,10 +49,13 @@ Mantenha o BOT atualizado para continuar funcionando.
 ''')
 
 def update_script():
-    os.system("git clone https://github.com/RaiiDev/RYTBOT.git")
+    script_path = os.path.dirname(os.path.realpath(__file__)) # encontra o caminho atual do script
+    script_folder = os.path.basename(script_path) # encontra o nome da pasta do script
+    os.system(f"rm -rf {script_path}") # exclui a pasta antiga do script
+    os.system(f"git clone https://github.com/RaiiDev/RYTBOT.git {script_path}") # clona o novo repositório no caminho atual do script
     print("Script atualizado com sucesso. Reiniciando...")
-    os.execl(sys.executable, sys.executable, *sys.argv)
-
+    os.system(f"python {script_path}/rYTbot.py") 
+    
 print("1. Atualizar script")
 print('''2. Continuar sem atualizar
     ''')
