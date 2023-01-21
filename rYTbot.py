@@ -11,7 +11,7 @@ _________________$$$$$$$
 ________________$$$$$$$$$
 _______________$$$$$$$$$$$
 ______________$$$$$$$$$$$$$
-_____________$$$$$$$$$$$$$$$
+_____________$$==RYTBOT==$$$
 ____________$$$$$$$$$$$$$$$$$
 ___________$$$$$$$$$$$$$$$$$$$
 _________$$$$$$$$$$$$$$$$$$$$$$$
@@ -40,7 +40,6 @@ ___________$$$$$$$$$$$$$$$$$$$__$$
 ___________$$$$$$$$$$$$$$$$$$$_$$
 ____________$$$___$$$$$___$$$__$$
 _______________$$$_____$$$____$$
-==RYTBOT==
 Ver: 2.6 beta
     ''')
 print('''
@@ -83,7 +82,7 @@ else:
                 print(f"Usando a proxy: {valid_proxy}")
                 try:
                     # Use the proxy to access the video
-                    response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, headers={'User-Agent': 'Mozilla/5.0'},  timeout=20)
+                    response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, headers={'User-Agent': 'Mozilla/5.0'},  timeout=30)
                     if response.status_code == 200:
                         time.sleep(30)
                 except requests.exceptions.RequestException:
@@ -94,7 +93,7 @@ else:
             print(f"Usando a proxy: {valid_proxy}")
             try:
                 # Use the proxy to access the video
-                response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, headers={'User-Agent': 'Mozilla/5.0'},  timeout=20)
+                response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, headers={'User-Agent': 'Mozilla/5.0'},  timeout=30)
                 if response.status_code == 200:
                     time.sleep(30)
             except requests.exceptions.RequestException:
