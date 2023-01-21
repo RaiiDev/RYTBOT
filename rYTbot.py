@@ -1,5 +1,6 @@
 import requests
 import time
+import os
 
 print('''
 ____________________$
@@ -60,7 +61,7 @@ for proxy in proxies:
     print("Verificando a proxy: " + proxy)
     try:
         # Usa a proxy para entrar no video.
-        response = requests.head(youtube_url, proxies={"http": "http://"+proxy, "https": "http://"+proxy}, timeout=10)
+        response = requests.head(youtube_url, proxies={"http": "http://"+proxy, "https": "http://"+proxy}, timeout=35)
         # Se a proxy retornar o valor 200, a proxy será bem sucedida
         if response.status_code == 200:
             valid_proxies.append(proxy)
@@ -79,18 +80,21 @@ else:
                 print(f"Usando a proxy: {valid_proxy}")
                 try:
                     # Use the proxy to access the video
-                    response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, timeout=30)
+                    response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, timeout=35)
                     if response.status_code == 200:
                         time.sleep(30)
+                        break
                 except requests.exceptions.RequestException:
                     print("Proxy " + valid_proxy + " inválida.")
-    if salvar == "n":
+   
+    else:
         for valid_proxy in valid_proxies:
             print(f"Usando a proxy: {valid_proxy}")
             try:
                 # Use the proxy to access the video
-                response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, timeout=30)
+                response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, timeout=35)
                 if response.status_code == 200:
                     time.sleep(30)
+                    break
             except requests.exceptions.RequestException:
                 print("Proxy " + valid_proxy + " inválida.")
