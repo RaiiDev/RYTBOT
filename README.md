@@ -41,7 +41,7 @@ $ cd RYTBOT
 
 $ python3 rYTbot.py
 
-$ Link do video do youtube (Atenção! Copie o link do navegador) ex: "www.youtube.com(certo)" NÃO "youtu.be(errado)"
+$ Link do video do youtube (Atenção! Copie o link do navegador) ex: "youtube.com(certo)" NÃO "youtu.be(errado)"
 
 $ proxy.txt (ou o seu arquivo)
 
