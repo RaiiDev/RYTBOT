@@ -6,7 +6,10 @@
 
 <h4>⚠️Atualize o BOT e veja os comandos necessarios</h4>
 
-![Screenshot_20230118-213745_Termux](https://user-images.githubusercontent.com/123031683/213328796-a963d194-d97b-4645-bdb4-ae1e0636b772.jpg)
+![Screenshot_20230122-164209_Termux](https://user-images.githubusercontent.com/123031683/213936935-386b3c2c-8900-4973-999c-c133221b3bc4.jpg)
+
+![Screenshot_20230122-163659_Termux](https://user-images.githubusercontent.com/123031683/213936940-008934d2-8888-4998-9b5c-d08db194ec85.jpg)
+
 
 !- O bot tem um arquivo chamado proxy.txt, e lá tem uma lista de proxys para fazer o bot funcionar, Adicione mais se precisar!
 
