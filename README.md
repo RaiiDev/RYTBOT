@@ -16,9 +16,9 @@
 
 3- Execute o comando "python3 rYTbot.py"
 
-4- Digite o nome do arquivo contendo as proxys (proxy.txt) já tem um arquivo contendo algumas proxys 
+4- Digite o link do video do youtube
 
-5- Digite o link do video do youtube
+5- Digite o nome do arquivo contendo as proxys (proxy.txt) já tem um arquivo contendo algumas proxys 
 
 Pronto, agora só esperar.
 
