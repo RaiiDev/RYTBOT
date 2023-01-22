@@ -4,6 +4,8 @@
 <h3>Copie o link do YouTube pelo navegador!!</h3>
 <h5>Este bot é para fins educacionais!</h5>
 
+<h4>⚠️Atualize o BOT e veja os comandos necessarios</h4>
+
 ![Screenshot_20230118-213745_Termux](https://user-images.githubusercontent.com/123031683/213328796-a963d194-d97b-4645-bdb4-ae1e0636b772.jpg)
 
 !- O bot tem um arquivo chamado proxy.txt, e lá tem uma lista de proxys para fazer o bot funcionar, Adicione mais se precisar!
@@ -33,6 +35,9 @@ $ pkg install python
 $ pkg install python3
 
 $ pip install requests
+
+$ pip install PySocks
+
 <h3>Comandos TERMUX</h3>
 
 $ git clone https://github.com/RaiiDev/RYTBOT.git
