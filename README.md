@@ -59,6 +59,8 @@ https://spys.one/en &
 https://www.freeproxylists.net &
 https://hidemy.name/en/proxy-list &
 
+⚠️ATENÇÂO, não use http e https, use SOCKS!!⚠️
+
 Depois utilize um site para extrair as proxys do site:
 https://proxydb.net/extractor (para extrair as porxys do site, basta copiar tudo e colocar no proxydb extractor)
 
