@@ -1,5 +1,7 @@
+import random
 import requests
 import time
+import socks
 import sys
 import os
 
@@ -40,7 +42,7 @@ ___________$$$$$$$$$$$$$$$$$$$__$$
 ___________$$$$$$$$$$$$$$$$$$$_$$
 ____________$$$___$$$$$___$$$__$$
 _______________$$$_____$$$____$$
-Ver: 2.6 beta
+Ver: 3.1 beta
     ''')
 print('''
 ===============BOT BY RAI==================
@@ -57,13 +59,25 @@ except FileNotFoundError:
     print("Arquivo não encontrado.")
     proxies = []
 
+# Lista de user-agents possíveis
+user_agents = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
+    "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
+    "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; AS; rv:11.0) like Gecko",
+    "Mozilla/5.0 (compatible, MSIE 11, Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko",
+    "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko",
+    "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18362",
+    "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36",
+]
+
 print("Verificando as proxies...")
 valid_proxies = []
 for proxy in proxies:
     print("Verificando a proxy: " + proxy)
     try:
         # Usa a proxy para entrar no video.
-        response = requests.head(youtube_url, proxies={"http": "http://"+proxy, "https": "http://"+proxy}, headers={'User-Agent': 'Mozilla/5.0'},  timeout=5)
+        response = requests.head(youtube_url, proxies={"http": "socks5://"+proxy, "https": "socks5://"+proxy}, headers={'User-Agent': random.choice(user_agents)}, timeout=5)
         # Se a proxy retornar o valor 200, a proxy será bem sucedida
         if response.status_code == 200:
             valid_proxies.append(proxy)
@@ -82,7 +96,7 @@ else:
                 print(f"Usando a proxy: {valid_proxy}")
                 try:
                     # Use the proxy to access the video
-                    response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, headers={'User-Agent': 'Mozilla/5.0'},  timeout=30)
+                    response = requests.get(youtube_url, proxies={"http": "socks5://"+valid_proxy, "https": "socks5://"+valid_proxy}, headers={'User-Agent': random.choice(user_agents)}, timeout=20)
                     if response.status_code == 200:
                         time.sleep(30)
                 except requests.exceptions.RequestException:
@@ -93,7 +107,7 @@ else:
             print(f"Usando a proxy: {valid_proxy}")
             try:
                 # Use the proxy to access the video
-                response = requests.get(youtube_url, proxies={"http": "http://"+valid_proxy, "https": "http://"+valid_proxy}, headers={'User-Agent': 'Mozilla/5.0'},  timeout=30)
+                response = requests.get(youtube_url, proxies={"http": "socks5://"+valid_proxy, "https": "socks5://"+valid_proxy}, headers={'User-Agent': random.choice(user_agents)}, timeout=20)
                 if response.status_code == 200:
                     time.sleep(30)
             except requests.exceptions.RequestException:
